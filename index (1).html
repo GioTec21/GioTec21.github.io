@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Il tuo sconto — Room &amp; Relax</title>
+<meta name="robots" content="noindex">
+
+<style>
+:root{
+  --sea:#0E3B43;
+  --sea-deep:#08272C;
+  --sand:#C9A227;
+  --paper:#FBF8F1;
+  --ink:#1C1C1C;
+  --grey:#6B6B6B;
+  --line:rgba(14,59,67,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--sea);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  min-height:100dvh;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:24px 16px 40px;
+}
+.card{
+  background:var(--paper);
+  width:100%;
+  max-width:430px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(0,0,0,.28);
+}
+header{
+  background:var(--sea);
+  color:var(--paper);
+  padding:26px 24px 22px;
+  text-align:center;
+  border-bottom:3px solid var(--sand);
+}
+header h1{
+  font-family:Georgia,'Times New Roman',serif;
+  font-weight:600;
+  font-size:1.5rem;
+  letter-spacing:.02em;
+  margin:0;
+}
+header p{
+  margin:6px 0 0;
+  font-size:.78rem;
+  color:var(--sand);
+  letter-spacing:.16em;
+}
+main{padding:26px 24px 28px}
+.lead{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:1.32rem;
+  line-height:1.35;
+  margin:0 0 8px;
+  color:var(--sea-deep);
+}
+.sub{
+  font-size:.92rem;
+  line-height:1.55;
+  color:var(--grey);
+  margin:0 0 22px;
+}
+label{
+  display:block;
+  font-size:.8rem;
+  font-weight:600;
+  color:var(--sea-deep);
+  margin:0 0 6px;
+}
+input[type=text]{
+  width:100%;
+  font-family:inherit;
+  font-size:1.02rem;
+  padding:13px 14px;
+  border:1.5px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+  color:var(--ink);
+  margin-bottom:16px;
+}
+input[type=text]:focus{
+  outline:3px solid rgba(201,162,39,.45);
+  outline-offset:1px;
+  border-color:var(--sand);
+}
+.consent{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:.78rem;
+  line-height:1.5;
+  color:var(--grey);
+  margin:4px 0 20px;
+}
+.consent input{margin-top:2px;width:18px;height:18px;flex:none;accent-color:var(--sea)}
+button{
+  width:100%;
+  font-family:inherit;
+  font-size:1.02rem;
+  font-weight:600;
+  padding:16px;
+  border:0;
+  border-radius:10px;
+  background:#25D366;
+  color:#06301A;
+  cursor:pointer;
+}
+button:disabled{background:#D8D4CB;color:#8B877E;cursor:not-allowed}
+button:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+.err{color:#A32B18;font-size:.83rem;margin:0 0 14px;display:none}
+.note{
+  font-size:.74rem;
+  line-height:1.55;
+  color:var(--grey);
+  margin:18px 0 0;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+}
+/* schermata codice */
+#done{display:none;text-align:center}
+.badge{
+  display:inline-block;
+  background:var(--sand);
+  color:var(--sea-deep);
+  font-weight:600;
+  font-size:.82rem;
+  padding:5px 14px;
+  border-radius:999px;
+  margin-bottom:16px;
+}
+.code{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:1.72rem;
+  letter-spacing:.06em;
+  color:var(--sea-deep);
+  background:#fff;
+  border:2px dashed var(--sand);
+  border-radius:12px;
+  padding:18px 12px;
+  margin:0 0 18px;
+  word-break:break-all;
+}
+.valid{font-size:.86rem;color:var(--grey);margin:0 0 22px;line-height:1.5}
+.again{
+  background:none;
+  color:var(--sea);
+  text-decoration:underline;
+  font-weight:500;
+  font-size:.85rem;
+  padding:12px;
+  margin-top:8px;
+}
+/* verifica */
+@media (prefers-reduced-motion:no-preference){
+  .card{animation:rise .45s ease-out both}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <header>
+    <h1>Room &amp; Relax</h1>
+    <p>SCAURI · MINTURNO</p>
+  </header>
+
+  <main>
+    <!-- ===== FORM OSPITE ===== -->
+    <section id="form">
+      <p class="lead">Grazie per essere stato nostro ospite.</p>
+      <p class="sub">Lascia il tuo nome e ricevi subito un codice del 10% sul prossimo soggiorno, prenotando direttamente con noi.</p>
+
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" autocomplete="given-name" placeholder="Mario">
+
+      <label for="cognome">Cognome</label>
+      <input type="text" id="cognome" autocomplete="family-name" placeholder="Rossi">
+
+      <p class="err" id="err">Scrivi nome e cognome per continuare.</p>
+
+      <div class="consent">
+        <input type="checkbox" id="ok">
+        <label for="ok" style="font-weight:400;margin:0;color:var(--grey)">
+          Acconsento a essere ricontattato su WhatsApp con offerte e disponibilità. Posso chiedere la cancellazione in qualsiasi momento scrivendo allo stesso numero.
+        </label>
+      </div>
+
+      <button id="go" disabled>Ricevi il codice su WhatsApp</button>
+
+      <p class="note">Il codice è valido dal 1° settembre al 30 giugno, su prenotazioni dirette. Non cumulabile con altre offerte.</p>
+    </section>
+
+    <!-- ===== CODICE GENERATO ===== -->
+    <section id="done">
+      <span class="badge">10% di sconto</span>
+      <p class="code" id="codeOut">—</p>
+      <p class="valid"><span id="periodo"></span><br>Tocca il pulsante per inviarcelo su WhatsApp e completare la richiesta.</p>
+      <button id="send">Apri WhatsApp e invia</button>
+      <button class="again" id="reset">Inserisci un altro nome</button>
+    </section>
+
+  </main>
+</div>
+
+<script>
+/* ===== NUCLEO CONDIVISO — identico nelle due pagine ===== */
+var SEGRETO = "roomrelax-scauri";   // cambialo solo se vuoi invalidare TUTTI i codici
+var ALFA = "ACDEFGHJKLMNPQRTUVWXY34679";
+
+function pulisci(s){
+  return (s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+                .toUpperCase().replace(/[^A-Z]/g,"");
+}
+function hash(s){
+  var h = 2166136261;
+  for (var i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = (h*16777619)>>>0; }
+  return h;
+}
+/* stagione: giugno-dicembre -> anno corrente; gennaio-maggio -> anno precedente */
+function stagioneOggi(){
+  var d = new Date();
+  return (d.getMonth()+1) >= 6 ? d.getFullYear() : d.getFullYear()-1;
+}
+function suffisso(nome, cognome, stag){
+  var h = hash(pulisci(nome)+"|"+pulisci(cognome)+"|"+stag+"|"+SEGRETO);
+  var out = "";
+  for (var i=0;i<4;i++){ out += ALFA.charAt(h % ALFA.length); h = Math.floor(h/ALFA.length)+(i+1)*7919; }
+  return out;
+}
+function generaCodice(nome, cognome, stag){
+  var c = pulisci(cognome);
+  if(!pulisci(nome) || !c) return null;
+  var sig = String(stag+1).slice(-2);
+  return "RR-" + c.slice(0,4) + "-" + sig + "-" + suffisso(nome, cognome, stag);
+}
+
+var TELEFONO = "393921248968";   // il tuo numero WhatsApp, senza + e senza spazi
+
+var $ = function(id){ return document.getElementById(id); };
+var codiceCorrente = "", nomeCorrente = "", stagCorrente = stagioneOggi();
+
+function controlla(){
+  $("go").disabled = !($("nome").value.trim() && $("cognome").value.trim() && $("ok").checked);
+}
+["nome","cognome"].forEach(function(id){ $(id).addEventListener("input", controlla); });
+$("ok").addEventListener("change", controlla);
+
+$("go").addEventListener("click", function(){
+  var n = $("nome").value.trim(), c = $("cognome").value.trim();
+  var cod = generaCodice(n, c, stagCorrente);
+  if(!cod){ $("err").style.display="block"; return; }
+  $("err").style.display="none";
+  codiceCorrente = cod;
+  nomeCorrente = n + " " + c;
+  $("codeOut").textContent = cod;
+  $("periodo").textContent = "Valido dal 1 settembre " + stagCorrente
+                           + " al 30 giugno " + (stagCorrente+1) + ".";
+  $("form").style.display = "none";
+  $("done").style.display = "block";
+  window.scrollTo(0,0);
+});
+
+$("send").addEventListener("click", function(){
+  var testo = "Ciao! Sono " + nomeCorrente
+            + ". Ho soggiornato da voi e vorrei usare il mio codice sconto del 10%: "
+            + codiceCorrente;
+  window.location.href = "https://wa.me/" + TELEFONO + "?text=" + encodeURIComponent(testo);
+});
+
+$("reset").addEventListener("click", function(){
+  $("done").style.display = "none";
+  $("form").style.display = "block";
+  $("nome").value = ""; $("cognome").value = ""; $("ok").checked = false;
+  controlla();
+});
+
+</script>
+</body>
+</html>
