@@ -200,6 +200,13 @@ button:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
       <p class="note">Il codice è valido dal 1° settembre al 30 giugno, su prenotazioni dirette. Non cumulabile con altre offerte.</p>
     </section>
 
+
+    <section id="nocode" style="display:none;text-align:center">
+      <p class="lead">Questa pagina si apre dalla cartolina</p>
+      <p class="sub">Il codice sconto si ottiene inquadrando il QR che trovi in camera o che ti consegniamo alla partenza. Se sei stato nostro ospite e non lo trovi, scrivici pure.</p>
+      <a href="https://wa.me/393921248968" style="display:block;text-decoration:none"><button style="background:#25D366;color:#06301A">Scrivici su WhatsApp</button></a>
+    </section>
+
     <!-- ===== CODICE GENERATO ===== -->
     <section id="done">
       <span class="badge">10% di sconto</span>
@@ -214,7 +221,7 @@ button:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
 
 <script>
 /* ===== NUCLEO CONDIVISO — identico nelle due pagine ===== */
-var SEGRETO = "roomrelax-scauri";   // cambialo solo se vuoi invalidare TUTTI i codici
+var SEGRETO = "roomrelax-scauri";
 var ALFA = "ACDEFGHJKLMNPQRTUVWXY34679";
 
 function pulisci(s){
@@ -226,38 +233,51 @@ function hash(s){
   for (var i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = (h*16777619)>>>0; }
   return h;
 }
+function pesca(h, n){
+  var out = "";
+  for (var i=0;i<n;i++){ out += ALFA.charAt(h % ALFA.length); h = Math.floor(h/ALFA.length)+(i+1)*7919; }
+  return out;
+}
+/* un gettone valido = 5 caratteri liberi + 2 di controllo calcolati dal segreto */
+function controlloGettone(base){ return pesca(hash("G|"+base+"|"+SEGRETO), 2); }
+function gettoneValido(t){
+  if(!t || t.length !== 7) return false;
+  return controlloGettone(t.slice(0,5)) === t.slice(5);
+}
 /* stagione: giugno-dicembre -> anno corrente; gennaio-maggio -> anno precedente */
 function stagioneOggi(){
   var d = new Date();
   return (d.getMonth()+1) >= 6 ? d.getFullYear() : d.getFullYear()-1;
 }
-function suffisso(nome, cognome, stag){
-  var h = hash(pulisci(nome)+"|"+pulisci(cognome)+"|"+stag+"|"+SEGRETO);
-  var out = "";
-  for (var i=0;i<4;i++){ out += ALFA.charAt(h % ALFA.length); h = Math.floor(h/ALFA.length)+(i+1)*7919; }
-  return out;
-}
-function generaCodice(nome, cognome, stag){
-  var c = pulisci(cognome);
-  if(!pulisci(nome) || !c) return null;
-  var sig = String(stag+1).slice(-2);
-  return "RR-" + c.slice(0,4) + "-" + sig + "-" + suffisso(nome, cognome, stag);
+function generaCodice(nome, cognome, gettone, stag){
+  if(!pulisci(nome) || !pulisci(cognome) || !gettoneValido(gettone)) return null;
+  var firma = pesca(hash(pulisci(nome)+"|"+pulisci(cognome)+"|"+gettone+"|"+stag+"|"+SEGRETO), 4);
+  return "RR-" + gettone + "-" + String(stag+1).slice(-2) + "-" + firma;
 }
 
-var TELEFONO = "393921248968";   // il tuo numero WhatsApp, senza + e senza spazi
+var TELEFONO = "393921248968";
 
 var $ = function(id){ return document.getElementById(id); };
 var codiceCorrente = "", nomeCorrente = "", stagCorrente = stagioneOggi();
 
+/* il gettone arriva dall'indirizzo: giotec21.github.io/#ABCDEFG */
+var GETTONE = (location.hash || "").replace("#","").toUpperCase().trim();
+
 function controlla(){
   $("go").disabled = !($("nome").value.trim() && $("cognome").value.trim() && $("ok").checked);
 }
-["nome","cognome"].forEach(function(id){ $(id).addEventListener("input", controlla); });
-$("ok").addEventListener("change", controlla);
+
+if(!gettoneValido(GETTONE)){
+  $("form").style.display = "none";
+  $("nocode").style.display = "block";
+} else {
+  ["nome","cognome"].forEach(function(id){ $(id).addEventListener("input", controlla); });
+  $("ok").addEventListener("change", controlla);
+}
 
 $("go").addEventListener("click", function(){
   var n = $("nome").value.trim(), c = $("cognome").value.trim();
-  var cod = generaCodice(n, c, stagCorrente);
+  var cod = generaCodice(n, c, GETTONE, stagCorrente);
   if(!cod){ $("err").style.display="block"; return; }
   $("err").style.display="none";
   codiceCorrente = cod;
