@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guida della zona — Room &amp; Relax</title>
+<style>
+:root{
+  --sea:#0E3B43; --sea-deep:#08272C; --sand:#C9A227;
+  --paper:#FBF8F1; --ink:#1C1C1C; --grey:#6B6B6B;
+  --line:rgba(14,59,67,.16); --card:#FFFFFF;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  line-height:1.55; -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:560px;margin:0 auto;padding:0 0 60px}
+
+/* intestazione */
+header{background:var(--sea);color:var(--paper);padding:34px 22px 28px;border-bottom:4px solid var(--sand)}
+header h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:1.9rem;margin:0 0 6px;line-height:1.2}
+header p{margin:0;font-size:.9rem;color:rgba(251,248,241,.75)}
+
+/* indice */
+nav{background:var(--sea-deep);padding:14px 22px;display:flex;flex-wrap:wrap;gap:8px}
+nav a{color:var(--sand);text-decoration:none;font-size:.82rem;border:1px solid rgba(201,162,39,.4);border-radius:999px;padding:6px 13px}
+nav a:active{background:rgba(201,162,39,.18)}
+
+section{padding:30px 22px 6px}
+h2{font-family:Georgia,serif;font-weight:normal;font-size:1.42rem;color:var(--sea-deep);margin:0 0 4px;scroll-margin-top:12px}
+.introsez{font-size:.9rem;color:var(--grey);margin:0 0 18px}
+
+/* schede luogo */
+.luogo{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 16px;margin-bottom:12px}
+.luogo h3{font-size:1.02rem;margin:0 0 3px;color:var(--sea-deep)}
+.meta{font-size:.78rem;color:var(--grey);margin:0 0 8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.stelle{color:#B8860B;font-weight:600}
+.dist{background:rgba(14,59,67,.07);border-radius:999px;padding:2px 9px}
+.luogo p.desc{font-size:.9rem;margin:0 0 10px}
+.azioni{display:flex;gap:8px;flex-wrap:wrap}
+.azioni a{font-size:.8rem;text-decoration:none;padding:7px 13px;border-radius:8px;border:1px solid var(--line);color:var(--sea);background:var(--paper)}
+.azioni a.tel{background:var(--sea);color:var(--paper);border-color:var(--sea)}
+
+/* box pratico */
+.pratico{background:var(--card);border-left:4px solid var(--sand);border-radius:0 10px 10px 0;padding:14px 16px;margin-bottom:12px}
+.pratico h3{font-size:.98rem;margin:0 0 5px;color:var(--sea-deep)}
+.pratico p{margin:0;font-size:.9rem}
+.pratico .dacompilare{color:#A32B18;font-style:italic}
+
+.nota{font-size:.83rem;color:var(--grey);background:rgba(201,162,39,.1);border-radius:10px;padding:12px 14px;margin:14px 0 0}
+
+footer{margin-top:34px;padding:26px 22px;background:var(--sea);color:var(--paper);text-align:center}
+footer h3{font-family:Georgia,serif;font-weight:normal;font-size:1.2rem;margin:0 0 8px}
+footer p{margin:0 0 16px;font-size:.88rem;color:rgba(251,248,241,.8)}
+footer a{display:inline-block;background:#25D366;color:#06301A;text-decoration:none;font-weight:600;padding:13px 26px;border-radius:10px}
+.piede{font-size:.74rem;color:rgba(251,248,241,.55);margin-top:18px}
+a:focus-visible{outline:3px solid var(--sand);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>La zona, spiegata bene</h1>
+  <p>Quello che sappiamo noi che ci viviamo — Room &amp; Relax, Scauri</p>
+</header>
+
+<nav>
+  <a href="#pratico">Informazioni utili</a>
+  <a href="#mare">Mare</a>
+  <a href="#mangiare">Mangiare</a>
+  <a href="#natura">Natura e storia</a>
+  <a href="#gite">Gite vicine</a>
+</nav>
+
+<!-- ============ INFORMAZIONI PRATICHE ============ -->
+<section id="pratico">
+  <h2>Informazioni utili</h2>
+  <p class="introsez">Le risposte alle domande che ci fanno più spesso.</p>
+
+  <!-- INIZIO wifi -->
+  <div class="pratico">
+    <h3>Wi-Fi</h3>
+    <p class="dacompilare">Rete: ________  ·  Password: ________</p>
+  </div>
+  <!-- FINE wifi -->
+
+  <!-- INIZIO orari -->
+  <div class="pratico">
+    <h3>Check-in e check-out</h3>
+    <p class="dacompilare">Check-in dalle ____ alle ____ · Check-out entro le ____</p>
+  </div>
+  <!-- FINE orari -->
+
+  <!-- INIZIO parcheggio -->
+  <div class="pratico">
+    <h3>Dove parcheggiare</h3>
+    <p class="dacompilare">________ (da compilare: dove parcheggiano gli ospiti a Scauri e a Marina, e cosa cambia in agosto)</p>
+  </div>
+  <!-- FINE parcheggio -->
+
+  <!-- INIZIO differenziata -->
+  <div class="pratico">
+    <h3>Raccolta differenziata</h3>
+    <p class="dacompilare">________ (da compilare: quale sacco in quale giorno, dove si lascia)</p>
+  </div>
+  <!-- FINE differenziata -->
+
+  <!-- INIZIO spesa -->
+  <div class="pratico">
+    <h3>Supermercato e farmacia</h3>
+    <p class="dacompilare">________ (da compilare: i più comodi rispetto alla struttura)</p>
+  </div>
+  <!-- FINE spesa -->
+
+  <!-- INIZIO emergenze -->
+  <div class="pratico">
+    <h3>Numeri di emergenza</h3>
+    <p>Emergenza unica <strong>112</strong> · Guardia medica e farmacia di turno: chiedeteci pure.</p>
+  </div>
+  <!-- FINE emergenze -->
+
+  <p class="nota">Le distanze indicate in questa guida sono in auto e approssimative. Nessuno di questi posti è comodamente raggiungibile a piedi dalla struttura.</p>
+</section>
+
+<!-- ============ MARE ============ -->
+<section id="mare">
+  <h2>Il mare</h2>
+  <p class="introsez">Dalla sabbia larga di Marina alle cale di ciottoli sotto il monte.</p>
+
+  <!-- INIZIO sassolini -->
+  <div class="luogo">
+    <h3>Spiaggia dei Sassolini</h3>
+    <p class="meta"><span class="stelle">4,4★</span> <span>Google</span> <span class="dist">≈ 5 min</span></p>
+    <p class="desc">Cala di ciottoli chiusa tra le rocce sotto il Monte di Scauri, acqua trasparente. Si scende per un sentiero ripido, quindi non adatta a chi ha difficoltà motorie o passeggini. Fuori stagione non c'è nessun servizio. Andateci la mattina presto: lo spazio libero è poco e si riempie.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Spiaggia+dei+Sassolini+Scauri">Mappa</a></div>
+  </div>
+  <!-- FINE sassolini -->
+
+  <!-- INIZIO maryrock -->
+  <div class="luogo">
+    <h3>Mary Rock Beach</h3>
+    <p class="meta"><span class="stelle">4,3★</span> <span>1.800+ recensioni</span> <span class="dist">≈ 5 min</span></p>
+    <p class="desc">Lo stabilimento affacciato sui Sassolini, con bar e ristorante sotto gli alberi. Si può usare solo il bar e stendersi nella parte libera accanto. Bel posto anche solo per un aperitivo al tramonto.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Mary+Rock+Beach+Sassolini">Mappa</a><a class="tel" href="tel:+390771681235">Chiama</a></div>
+  </div>
+  <!-- FINE maryrock -->
+
+  <!-- INIZIO marina -->
+  <div class="luogo">
+    <h3>Spiaggia di Marina di Minturno</h3>
+    <p class="meta"><span class="stelle">4,6★</span> <span>Google</span> <span class="dist">≈ 10 min</span></p>
+    <p class="desc">Sabbia, spiaggia ampia e fondale che degrada piano: la scelta giusta con bambini piccoli. Il lungomare è piacevole anche solo per due passi al tramonto.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Spiaggia+Marina+di+Minturno">Mappa</a></div>
+  </div>
+  <!-- FINE marina -->
+
+  <!-- INIZIO marinabeach -->
+  <div class="luogo">
+    <h3>Marina Beach</h3>
+    <p class="meta"><span class="stelle">4,3★</span> <span>360+ recensioni</span> <span class="dist">≈ 12 min</span></p>
+    <p class="desc">Stabilimento a Marina di Minturno, sabbia fine e spazio fra gli ombrelloni. C'è un'area picnic all'ombra di un platano enorme. Parcheggio abbondante nei dintorni.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Marina+Beach+Minturno">Mappa</a></div>
+  </div>
+  <!-- FINE marinabeach -->
+
+  <!-- INIZIO aurora -->
+  <div class="luogo">
+    <h3>Lido Aurora</h3>
+    <p class="meta"><span class="stelle">4,0★</span> <span>1.300+ recensioni</span> <span class="dist">≈ 4 min</span></p>
+    <p class="desc">Sul lungomare di Scauri, aperto da mattina presto a notte fonda. Bar per la colazione e ristorante sulla spiaggia (Officina del Mare). Comodo se non volete spostarvi.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Lido+Aurora+Scauri">Mappa</a><a class="tel" href="tel:+393926156387">Chiama</a></div>
+  </div>
+  <!-- FINE aurora -->
+
+  <!-- INIZIO florida -->
+  <div class="luogo">
+    <h3>Lido Florida</h3>
+    <p class="meta"><span class="stelle">4,2★</span> <span>240+ recensioni</span> <span class="dist">≈ 6 min</span></p>
+    <p class="desc">Stabilimento tranquillo e ordinato, prezzi contenuti, giochi per bambini e tavoli per le carte. Piace a chi cerca un posto semplice e pulito senza spendere molto.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Lido+Florida+Scauri">Mappa</a></div>
+  </div>
+  <!-- FINE florida -->
+
+  <!-- INIZIO maria -->
+  <div class="luogo">
+    <h3>Lido Maria</h3>
+    <p class="meta"><span class="stelle">3,8★</span> <span>190 recensioni</span> <span class="dist">≈ 5 min</span></p>
+    <p class="desc">Piccolo lido di quartiere sul lungomare, tranquillo, con bagnino sempre presente. Apre a giugno e chiude a settembre.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Lido+Maria+Scauri">Mappa</a></div>
+  </div>
+  <!-- FINE maria -->
+
+  <!-- INIZIO delsole -->
+  <div class="luogo">
+    <h3>Lido del Sole</h3>
+    <p class="meta"><span class="stelle">3,9★</span> <span>250 recensioni</span> <span class="dist">≈ 7 min</span></p>
+    <p class="desc">Sul lungomare, con bar affacciato sulla spiaggia. In alta stagione il parcheggio è complicato.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Lido+del+Sole+Scauri">Mappa</a></div>
+  </div>
+  <!-- FINE delsole -->
+</section>
+
+<!-- ============ MANGIARE ============ -->
+<section id="mangiare">
+  <h2>Dove mangiare</h2>
+  <p class="introsez">In ordine di distanza. Nei mesi pieni conviene sempre prenotare.</p>
+
+  <!-- INIZIO anfora -->
+  <div class="luogo">
+    <h3>L'Anfora</h3>
+    <p class="meta"><span class="stelle">4,2★</span> <span>Pesce · €€</span> <span class="dist">≈ 3 min</span></p>
+    <p class="desc">Storico indirizzo di pesce a Scauri, con il vino della casa. Chiuso il martedì.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Ristorante+L'Anfora+Scauri">Mappa</a><a class="tel" href="tel:+390771614291">Prenota</a></div>
+  </div>
+  <!-- FINE anfora -->
+
+  <!-- INIZIO angeli -->
+  <div class="luogo">
+    <h3>Angeli &amp; Marinai</h3>
+    <p class="meta"><span class="stelle">4,1★</span> <span>Pesce e vini · €€€</span> <span class="dist">≈ 3 min</span></p>
+    <p class="desc">Locale a gestione familiare in piazza, menù che cambia con il pescato del giorno. Solo la sera, tranne la domenica.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Angeli+e+Marinai+Scauri">Mappa</a><a class="tel" href="tel:+393470428375">Prenota</a></div>
+  </div>
+  <!-- FINE angeli -->
+
+  <!-- INIZIO acquapazza -->
+  <div class="luogo">
+    <h3>Acquapazza</h3>
+    <p class="meta"><span class="stelle">3,9★</span> <span>Pesce · €€</span> <span class="dist">≈ 4 min</span></p>
+    <p class="desc">Sul lungomare di Scauri, buona per una serata con vista mare e una lista di gin nutrita.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Acquapazza+Scauri">Mappa</a><a class="tel" href="tel:+393661753253">Prenota</a></div>
+  </div>
+  <!-- FINE acquapazza -->
+
+  <!-- INIZIO rusticone -->
+  <div class="luogo">
+    <h3>Lu Rusticone</h3>
+    <p class="meta"><span class="stelle">4,6★</span> <span>Pizza al taglio · €</span> <span class="dist">≈ 4 min</span></p>
+    <p class="desc">Un'istituzione. Pizza in teglia alla romana, si compra a tranci e si sceglie fra tante varianti. Apre solo dal tardo pomeriggio. Da provare almeno una volta.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Lu+Rusticone+Scauri">Mappa</a><a class="tel" href="tel:+390771682640">Chiama</a></div>
+  </div>
+  <!-- FINE rusticone -->
+
+  <!-- INIZIO locandarusticone -->
+  <div class="luogo">
+    <h3>Locanda Rusticone</h3>
+    <p class="meta"><span class="stelle">4,5★</span> <span>Pizza e cucina · €€</span> <span class="dist">≈ 4 min</span></p>
+    <p class="desc">La versione con i tavoli: pizza in teglia servita su vassoio di legno, impasto leggero. Piccola, conviene prenotare. Chiusa il mercoledì.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Locanda+Rusticone+Minturno">Mappa</a><a class="tel" href="tel:+390771682488">Prenota</a></div>
+  </div>
+  <!-- FINE locandarusticone -->
+
+  <!-- INIZIO macello -->
+  <div class="luogo">
+    <h3>Il Macello</h3>
+    <p class="meta"><span class="stelle">4,4★</span> <span>Carne · €€€</span> <span class="dist">≈ 4 min</span></p>
+    <p class="desc">Braceria sull'Appia, tagli di carne spiegati al tavolo. Solo cena. La spesa sale in fretta.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Il+Macello+Scauri">Mappa</a><a class="tel" href="tel:+393404109503">Prenota</a></div>
+  </div>
+  <!-- FINE macello -->
+
+  <!-- INIZIO marconi -->
+  <div class="luogo">
+    <h3>Pizzeria Marconi</h3>
+    <p class="meta"><span class="stelle">4,3★</span> <span>Pizzeria · €€</span> <span class="dist">≈ 5 min</span></p>
+    <p class="desc">Pizza classica al piatto, prezzi onesti, servizio rapido. Chiusa il martedì.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Pizzeria+Marconi+Scauri">Mappa</a><a class="tel" href="tel:+390771902451">Prenota</a></div>
+  </div>
+  <!-- FINE marconi -->
+
+  <!-- INIZIO civico69 -->
+  <div class="luogo">
+    <h3>Civico 69</h3>
+    <p class="meta"><span class="stelle">4,6★</span> <span>Cucina napoletana · €€</span> <span class="dist">≈ 5 min</span></p>
+    <p class="desc">Tavola calda napoletana gestita da Francesco e Antonella. Frittatine, genovese, spaghetti con le vongole. Aperta pranzo e cena tutti i giorni.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Civico+69+Minturno">Mappa</a><a class="tel" href="tel:+390771903885">Chiama</a></div>
+  </div>
+  <!-- FINE civico69 -->
+
+  <!-- INIZIO mago -->
+  <div class="luogo">
+    <h3>Il Mago degli Arrosti</h3>
+    <p class="meta"><span class="stelle">4,4★</span> <span>Rosticceria e pizza · €</span> <span class="dist">≈ 5 min</span></p>
+    <p class="desc">Polli allo spiedo, patate e pizza da asporto. La soluzione per la sera in cui non avete voglia di uscire. Meglio ordinare per telefono. Chiuso il lunedì.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Il+Mago+degli+Arrosti+Minturno">Mappa</a><a class="tel" href="tel:+393451135489">Ordina</a></div>
+  </div>
+  <!-- FINE mago -->
+
+  <!-- INIZIO birretta -->
+  <div class="luogo">
+    <h3>La Birretta</h3>
+    <p class="meta"><span class="stelle">4,4★</span> <span>Birreria · €€</span> <span class="dist">≈ 5 min</span></p>
+    <p class="desc">Birre alla spina e qualcosa da mangiare, dehors riscaldato in inverno. Chiusa il martedì.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=La+Birretta+Scauri">Mappa</a></div>
+  </div>
+  <!-- FINE birretta -->
+
+  <!-- INIZIO pinsa -->
+  <div class="luogo">
+    <h3>Scauri Pinsa</h3>
+    <p class="meta"><span class="stelle">4,8★</span> <span>Pinseria · €</span> <span class="dist">≈ 6 min</span></p>
+    <p class="desc">Il punteggio più alto della zona. Pinsa romana con impasto leggero e molti condimenti. Solo cena, chiuso il lunedì.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Scauri+Pinsa">Mappa</a><a class="tel" href="tel:+393486487698">Chiama</a></div>
+  </div>
+  <!-- FINE pinsa -->
+
+  <!-- INIZIO corsaro -->
+  <div class="luogo">
+    <h3>Il Corsaro</h3>
+    <p class="meta"><span class="stelle">4,3★</span> <span>Pub · €€</span> <span class="dist">≈ 10 min</span></p>
+    <p class="desc">Pub in stile piratesco sull'Appia, birre artigianali e piatti sostanziosi. Chiuso il giovedì.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Il+Corsaro+Minturno">Mappa</a><a class="tel" href="tel:+390771622056">Chiama</a></div>
+  </div>
+  <!-- FINE corsaro -->
+
+  <!-- INIZIO ragnatela -->
+  <div class="luogo">
+    <h3>La Ragnatela</h3>
+    <p class="meta"><span class="stelle">4,3★</span> <span>Pesce sul mare · €€</span> <span class="dist">≈ 13 min</span></p>
+    <p class="desc">A Marina di Minturno, si mangia praticamente sulla spiaggia. Porzioni abbondanti, giardino con giochi per i bambini, tramonto notevole.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=La+Ragnatela+Minturno">Mappa</a><a class="tel" href="tel:+393331444381">Prenota</a></div>
+  </div>
+  <!-- FINE ragnatela -->
+
+  <!-- INIZIO luna -->
+  <div class="luogo">
+    <h3>Luna e l'altro</h3>
+    <p class="meta"><span class="stelle">4,7★</span> <span>Trattoria · €€€</span> <span class="dist">≈ 13 min</span></p>
+    <p class="desc">Nel borgo di Minturno, in piazza. Pesce e cucina di ricerca in un posto piccolo. Il migliore per una cena importante. Chiuso il martedì, prenotazione consigliata.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Luna+e+l'altro+Minturno">Mappa</a><a class="tel" href="tel:+393333656044">Prenota</a></div>
+  </div>
+  <!-- FINE luna -->
+
+  <!-- INIZIO panempetto -->
+  <div class="luogo">
+    <h3>Panempetto</h3>
+    <p class="meta"><span class="stelle">4,7★</span> <span>Braceria · €€</span> <span class="dist">≈ 14 min</span></p>
+    <p class="desc">Nel borgo antico, con i tavoli all'aperto all'ombra del castello. Solo cena, da mercoledì a domenica.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Panempetto+Minturno">Mappa</a><a class="tel" href="tel:+393455154592">Prenota</a></div>
+  </div>
+  <!-- FINE panempetto -->
+
+  <!-- INIZIO piccoloborgo -->
+  <div class="luogo">
+    <h3>Piccolo Borgo</h3>
+    <p class="meta"><span class="stelle">4,3★</span> <span>Pizzeria · €€</span> <span class="dist">≈ 14 min</span></p>
+    <p class="desc">Pizzeria nel centro storico di Minturno, con vista sul golfo dalla piazza.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Pizzeria+Piccolo+Borgo+Minturno">Mappa</a><a class="tel" href="tel:+390771900469">Prenota</a></div>
+  </div>
+  <!-- FINE piccoloborgo -->
+</section>
+
+<!-- ============ NATURA E STORIA ============ -->
+<section id="natura">
+  <h2>Natura e storia</h2>
+  <p class="introsez">Due posti che quasi nessuno conosce e che valgono la giornata.</p>
+
+  <!-- INIZIO gianola -->
+  <div class="luogo">
+    <h3>Parco di Gianola e Monte di Scauri</h3>
+    <p class="meta"><span class="stelle">4,5★</span> <span>Ingresso libero</span> <span class="dist">≈ 8 min</span></p>
+    <p class="desc">Trecento ettari di macchia mediterranea a picco sul golfo, dentro il Parco Riviera di Ulisse. Sentieri segnati, il porticciolo romano con la sua caletta, i resti della villa di Mamurra, le cisterne e i forti affacciati sul mare. Ottimo per lo snorkeling fra gli scogli. Portate acqua: lungo i sentieri non c'è nulla.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Parco+Gianola+Monte+di+Scauri">Mappa</a></div>
+  </div>
+  <!-- FINE gianola -->
+
+  <!-- INIZIO minturnae -->
+  <div class="luogo">
+    <h3>Parco archeologico di Minturnae</h3>
+    <p class="meta"><span class="stelle">4,5★</span> <span>Biglietto ~5 € · gratis bambini</span> <span class="dist">≈ 12 min</span></p>
+    <p class="desc">Città romana sull'Appia con il teatro ricostruito, il foro, le terme e le latrine conservate. C'è un piccolo museo dentro il teatro. Accanto passa il ponte borbonico Real Ferdinando sul Garigliano. Basta un'ora e mezza. Chiuso lunedì e martedì; d'estate portate cappello e acqua, l'ombra è poca.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Parco+Archeologico+Minturnae">Mappa</a><a class="tel" href="tel:+390771680093">Informazioni</a></div>
+  </div>
+  <!-- FINE minturnae -->
+
+  <!-- INIZIO borgo -->
+  <div class="luogo">
+    <h3>Il borgo di Minturno</h3>
+    <p class="meta"><span class="dist">≈ 13 min</span></p>
+    <p class="desc">Il paese in collina, con il castello, le porte medievali e i vicoli stretti. Dalle piazze si vede tutto il golfo. Bello soprattutto verso il tramonto, e ci si può fermare a cena.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Minturno+centro+storico">Mappa</a></div>
+  </div>
+  <!-- FINE borgo -->
+</section>
+
+<!-- ============ GITE VICINE ============ -->
+<section id="gite">
+  <h2>Gite in giornata</h2>
+  <p class="introsez">Tutto entro un'ora di auto. Le mete lontane le lasciamo ad altri.</p>
+
+  <!-- INIZIO formia -->
+  <div class="luogo">
+    <h3>Formia</h3>
+    <p class="meta"><span class="dist">≈ 20 min</span></p>
+    <p class="desc">Il porto, il lungomare, la tomba di Cicerone sull'Appia. Da qui partono i traghetti e gli aliscafi per Ponza e Ventotene: partenza la mattina, rientro in serata, si fa in giornata. Prenotate il posto in anticipo nei fine settimana d'agosto.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Porto+di+Formia">Mappa</a></div>
+  </div>
+  <!-- FINE formia -->
+
+  <!-- INIZIO suio -->
+  <div class="luogo">
+    <h3>Terme di Suio</h3>
+    <p class="meta"><span class="dist">≈ 25 min</span></p>
+    <p class="desc">Sorgenti termali sul Garigliano, verso l'interno. Piscine calde e fanghi. Un'alternativa al mare per una giornata di pioggia o per chi cerca qualcosa di tranquillo.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Terme+di+Suio+Castelforte">Mappa</a></div>
+  </div>
+  <!-- FINE suio -->
+
+  <!-- INIZIO gaeta -->
+  <div class="luogo">
+    <h3>Gaeta</h3>
+    <p class="meta"><span class="dist">≈ 35 min</span></p>
+    <p class="desc">La spiaggia di Serapo, il quartiere medievale, e soprattutto la Montagna Spaccata con la Grotta del Turco: una fenditura nella roccia con una scala che scende fino al mare. Da assaggiare la tiella gaetana, torta salata ripiena.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Montagna+Spaccata+Gaeta">Mappa</a></div>
+  </div>
+  <!-- FINE gaeta -->
+
+  <!-- INIZIO roccamonfina -->
+  <div class="luogo">
+    <h3>Roccamonfina</h3>
+    <p class="meta"><span class="dist">≈ 40 min</span></p>
+    <p class="desc">Un vulcano spento coperto di castagneti, appena passato il Garigliano. Aria fresca d'estate, boschi e il santuario. La zona dei castagni e delle passeggiate, quando al mare fa troppo caldo.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Roccamonfina">Mappa</a></div>
+  </div>
+  <!-- FINE roccamonfina -->
+
+  <!-- INIZIO sperlonga -->
+  <div class="luogo">
+    <h3>Sperlonga</h3>
+    <p class="meta"><span class="dist">≈ 50 min</span></p>
+    <p class="desc">Il borgo bianco a picco sul mare, con la villa di Tiberio e la grotta sulla spiaggia. È il posto più bello della costa e anche il più affollato: andateci presto o in settimana.</p>
+    <div class="azioni"><a href="https://maps.google.com/?q=Sperlonga">Mappa</a></div>
+  </div>
+  <!-- FINE sperlonga -->
+</section>
+
+<footer>
+  <h3>Serve altro?</h3>
+  <p>Se avete un dubbio, una richiesta o volete un consiglio su misura, scriveteci: rispondiamo volentieri.</p>
+  <a href="https://wa.me/393921248968">Scrivici su WhatsApp</a>
+  <p class="piede">Room &amp; Relax — Scauri, Minturno<br>Orari e giorni di chiusura possono cambiare: conviene sempre una telefonata prima di uscire.</p>
+</footer>
+
+</div>
+</body>
+</html>
